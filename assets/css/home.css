@@ -1,0 +1,163 @@
+/*---- main body styling -----*/
+body{
+    margin:0;
+    font-family: sans-serif;
+    color: grey;
+}
+
+/*--- title ----*/
+#page-heading{
+    text-align: center;
+    margin-top: 25px;
+    color: grey;
+}
+
+/*------ styling of todo form -----*/
+
+#new-todo-form{
+    margin:40px;
+    border: 2px solid grey;
+}
+
+#description{
+    padding: 5px;
+    /* border-top: 2px solid grey; */
+}
+
+ label{
+  font-size: 14px;
+}
+
+#new-todo-form #desc{
+    display: block;
+    border:0px solid transparent;
+    padding: 5px;
+}
+
+#new-todo-form #container-cat-date{
+    display: block;
+    border-top: 2px solid grey;
+}
+
+#container-cat-date #category{
+    padding:5px;
+    display: inline-block;
+    width: 50%;
+    border-right: 2px solid grey;
+}
+
+#container-cat-date #cat{
+    display: block;
+    width: 100%;
+    border:0px solid transparent;
+    padding: 5px;
+}
+
+#container-cat-date #dueDate{
+    width: 47%;
+    display: inline-block;
+}
+
+#container-cat-date #date{
+    display: block;
+    width: 95%;
+    border:0px solid transparent;
+    padding: 5px;
+}
+
+.input-div{
+    --c: white; 
+}
+
+.input-div input, select{
+    background-color: var(--c);
+}
+
+.input-div:hover{
+    --c: rgb(248, 246, 246); 
+    background-color: rgb(248, 246, 246);
+}
+
+#new-todo-form #buttons{
+    text-align: center;
+    padding-top: 15px;
+    border-top: 2px solid grey;
+}
+
+#new-todo-form #buttons button{
+    padding: 10px;
+    margin-right: 5px;
+}
+
+
+#new-todo-form #buttons #add{
+    background-color: grey;
+    border:0px solid transparent;
+    color: white;
+}
+
+#new-todo-form #buttons #add:hover{
+    background-color: rgb(77, 76, 76);
+}
+
+#new-todo-form #buttons #delete-button{
+    background-color: red;
+    color: white;
+    border:0px solid transparent; 
+}
+
+#new-todo-form #buttons #delete-button:hover{
+    background-color: rgb(170, 0, 0);
+}
+
+/* ----Styling of different task----- */
+
+#task-list-container ul{
+    padding: 0;
+    list-style: none;
+}
+
+#task-list-container ul .task{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid grey;
+}
+
+.task #details{
+    /* font-size: 16px; */
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.task #details #details-inner{
+    /* width: 20%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.task #details #details-inner span{
+   margin-left: 30px;
+}
+
+
+#details span #task-date{
+    font-size: 14px;
+}
+
+#details #task-category p{
+    height:30px;
+    width: 100px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}

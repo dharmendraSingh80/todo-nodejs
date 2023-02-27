@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css">
+
+</head>
+<body>
+    <h1 id="page-heading"> TODO App </h1>
+    <form id="new-todo-form" action="/create-list/list" method="post">
+        <div id="description" class="input-div">
+            <label for="desc">DESCRIPTION</label>
+            <input type="text" name="description" id="desc" placeholder="what do you need to do?">
+        </div>
+
+        <div id="container-cat-date">
+            <span id="category" class="input-div">
+                <label for="cat">CATEGORY</label>
+         
+                <select name="category" id="cat" >
+                    <option value=""disabled selected hidden>Choose a category</option>
+                    <option value="PERSONAL">Personal</option>
+                    <option value="WORK">Work</option>
+                    <option value="SCHOOL">School</option>
+                    <option value="CLEANING">Cleaning</option>
+                    <option value="OTHER">other</option>
+                </select>
+            </span>
+            <span id="dueDate" class="input-div">
+                <label for="due-date">DUE DATE</label>
+                <input type="date" id="date" name="date" placeholder="dd/mm/yyyy" >
+            </span>
+        </div>
+        
+        <div id="buttons">
+            <button type="submit" id="add">
+                <i class="fa-regular fa-plus"></i>
+                ADD TASK
+            </button>
+            <button formaction="/delete-task" id="delete-button" type="submit">
+                    <i class="fa-solid fa-trash-can"></i>
+                    DELETE TASK
+            </button>
+        </div>
+        
+        <div id="task-list-container">
+            <ul>
+                <% for (let i of task_list){%>
+                   <li class="task">
+                        <div id="details">
+                            
+                            <div id="details-inner">
+                                <input type="checkbox" name="check" value="<%= i._id %>">
+                                <span>
+                                    <p><%= i.description%></p>
+                                    <p id="task-date">
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        <%=i.date %></p>
+                                </span>
+                                
+                            </div>
+                            <div id="task-category"><p class="task-category"><%= i.category %></p></div>
+                        </div>
+                   </li>
+                <%}%>
+            </ul>
+        </div>
+    </form>
+
+    <script src="https://kit.fontawesome.com/7d06a098cc.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/home.js"></script>
+    
+</body>
+</html>
